@@ -8,7 +8,7 @@ services:
     volumes:
       - type: bind
         source:"./php-apache"
-        target:"/etc/apache2/sites-enabled/000-default.conf"
+    target:"/etc/apache2/sites-enabled/000-default.conf"
       - type: bind
         source:"./php-apache/app"
         target:"/var/www/html"
