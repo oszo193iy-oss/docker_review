@@ -4,10 +4,10 @@ services:
       context: ./php-apache
       dockerfile: Dockerfile
     ports:
-      - 8888 : 80
+      - 8888:80
     volumes:
       - type: bind
-        source: ./src 
+        source: "./php-apache"
         target: "/etc/apache2/sites-enabled/000-default.conf"
       - type: bind
         source: "./php-apache/app"
