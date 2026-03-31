@@ -8,14 +8,14 @@ services:
     volumes:
       - type: bind
         source: "./php-apache/000-default.conf"
-    target: "/etc/apache2/sites-enabled/000-default.conf"
+        target: "/etc/apache2/sites-enabled/000-default.conf"
       - type: bind
         source: "./php-apache/app"
         target: "/var/www/html"
     depends_on:
       - review-mysql
   review-mysql:
-    image: mysql: 8
+    image: mysql:8
     platform: linux/x86_64
     environment:
       - MYSQL_ROOT_PASSWORD=e2QNqCUd
