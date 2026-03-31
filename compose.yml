@@ -1,23 +1,24 @@
+
+
 services:
   review-php-apache:
     build:
       context: ./php-apache
       dockerfile: Dockerfile
     ports:
-      - 8888:80
+      - [ 1 ]:[ 2 ]
     volumes:
       - type: bind
-        source: "./php-apache/000-default.conf"
-        target: "/etc/apache2/sites-enabled/000-default.conf"
+        source: [ 3 ]
+  target: "/etc/apache2/sites-enabled/000-default.conf"
       - type: bind
-        source: "./php-apache/app/public"
-        target: "/var/www/html/index.php"
-    depends_on:
+        source: "./php-apache/app"
+        target: [ 4 ]
+     depends_on:
       - review-mysql
   review-mysql:
-    image: mysql:8
+    image: [ 5 ]
     platform: linux/x86_64
     environment:
       - MYSQL_ROOT_PASSWORD=e2QNqCUd
       - MYSQL_DATABASE=docker_review
-
