@@ -10,11 +10,11 @@ services:
     volumes:
       - type: bind
         source: [ 3 ]
-  target: "/etc/apache2/sites-enabled/000-default.conf"
+        target: "/etc/apache2/sites-enabled/000-default.conf"
       - type: bind
         source: "./php-apache/app"
         target: [ 4 ]
-     depends_on:
+    depends_on:
       - review-mysql
   review-mysql:
     image: [ 5 ]
