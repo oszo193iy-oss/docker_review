@@ -10,7 +10,7 @@ services:
         source: "./php-apache/000-default.conf"
         target: "/etc/apache2/sites-enabled/000-default.conf"
       - type: bind
-        source: "./php-apache/app"
+        source: "./php-apache/app/public"
         target: "/var/www/html"
     depends_on:
       - review-mysql
